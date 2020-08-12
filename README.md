@@ -34,10 +34,10 @@ openssl enc -d -aes-128-cbc -K <KEY_VALUE> -iv <IV_VALUE> -nosalt -in <PLIST_FIL
 To read the value from the encrypted file , we need to first decrypt it and then parse the data to read the exact value.
 
 						
-In the demo app `CryptoManager` is the main class which will do this core operations.
+In this demo app `CryptoManager` is the main class which will do this core operations.
 `fetchSecretValue` method will read the encrypted file , decrypt it and then return the secret value.
-I am using “CryptoSwift” to handle the cryptogrphy operations.
-So , to decrypt the encrypted file we need to have the Key and IV .This is saved as `UINT8` array in the source code itself in `SecureKeys.swift`.
+I am using `CryptoSwift` (https://github.com/krzyzanowskim/CryptoSwift) to perform the cryptography operations.
+So , to decrypt the encrypted file in bundle we need to have the Key and IV .This is saved as `UINT8` array in the source code itself in `SecureKeys.swift`.
 To convert our initial HEX key to UInt8 , you can use this website.   
 https://cryptii.com/pipes/integer-encoder
 
